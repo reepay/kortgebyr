@@ -9,7 +9,7 @@ let opts = {
     avgvalue: 380,
     cards: { dankort: 1, visa: 1, mastercard: 1, mobilepay: 1 },
     features: {},
-    modules: {}
+    modules: 'auto'
 };
 let $dankortscale;
 let $acqs;

@@ -46,7 +46,6 @@ a {
 }
 
 input, select {
-    display: block;
     box-sizing: border-box;
     font-family: inherit;
     font-size: inherit;
@@ -127,6 +126,7 @@ nav {
         border-right: 4px solid transparent;
         border-top: 4px solid #aaa;
     }
+
     &:hover {
         background-color: #e9e9e9;
         &:after {
@@ -158,51 +158,79 @@ nav {
     }
 }
 
-label {
-    display: block;
-    margin: 7px 0;
-    line-height: normal;
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none;   /* Chrome/Safari/Opera */
-    -moz-user-select: none;      /* Firefox */
-    -ms-user-select: none;       /* IE/Edge */
-    user-select: none;
-}
-
-input {
-    display: inline-block;
-    margin-right: 4px;
-}
-
-.menu {
-    display: block;
-    float: left;
-    box-sizing: border-box;
-    width: 32%;
-    padding: 15px 25px 15px;
+.menu-row {
+    display: table;
+    clear: both;
+    content: "";
+    width: 100%;
     margin: 0;
 }
 
-.menu-2 {
-    border-left: 1px solid #dfdfdf;
-    border-right: 1px solid #dfdfdf;
+.menu {
+    float: left;
+    font-size: 13.5px;
+    box-sizing: border-box;
+    padding: 4px 21px;
 }
 
-.menu-3 {
-    width:19%;
-    padding-right:0;
+.menu1 {
+    width: 33%;
 }
 
-.menu-4 {
-    width:17%;
-    padding-right:0;
-    padding-left: 0;
+.menu2 {
+    width: 30%;
+    padding: 5px 27px 30px;
 }
+
+.menu2--inblck {
+    display: inline-block;
+}
+
+.menu3 {
+    width: 37%;
+    padding-right: 0;
+}
+
+.menu3--inblck {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+
+    > li {
+        line-height: 1.85em;
+
+        > label {
+            cursor: pointer;
+        }
+    }
+
+    input {
+        display: inline-block;
+        vertical-align: -3px;
+        margin: 0 4px 0 1px;
+    }
+}
+
+.menu-b {
+    display: block;
+    font-weight: 500;
+    font-size: 12px;
+    padding-bottom: 5px;
+    margin-top: 14px;
+    color: #444;
+}
+
 
 .field {
     width: 80px;
     height: 29px;
-    margin: 4px 7px 5px 0;
+    margin: 4px 7px 0 0;
     padding: 0 4px 0 6px;
     line-height: normal;
     border-radius: 3px;
@@ -215,18 +243,6 @@ input {
     font-weight: 500;
     font-size: 15px;
     color: #444;
-}
-
-#acquirer {
-    display: block;
-    width: 100%;
-    height: 30px;
-    padding: 0 6px 0 4px;
-    margin: 7px 0 15px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    background: #fdfdfd;
 }
 
 table {

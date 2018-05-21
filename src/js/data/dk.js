@@ -28,7 +28,7 @@ const ACQs = [
             }
         }
     },
-    {
+     {
         name: 'Teller',
         logo: 'nets.svg',
         link: 'https://www.nets.eu/dk/payments/online-betalinger/indloesningsaftale/',
@@ -127,6 +127,13 @@ const PSPs = [
         link: 'https://www.2checkout.com',
         cards: ['visa', 'mastercard', 'maestro', 'amex', 'jcb', 'diners'],
         features: ['Svindelkontrol', 'Abonnementsbetaling'],
+        modules: {
+            magento: { unofficial: true },
+            woocommerce: { unofficial: true  },
+            prestashop: { unofficial: true },
+            opencart: { unofficial: true },
+            shopify: {},
+        },
         fees: {
             trn() {
                 return $revenue.scale(2.4 / 100).add(new Currency(0.3 * $qty, 'USD'));
@@ -139,6 +146,13 @@ const PSPs = [
         link: 'https://www.braintreepayments.com/en-dk/braintree-pricing',
         cards: ['visa', 'mastercard', 'maestro'],
         features: ['Svindelkontrol', 'Abonnementsbetaling'],
+        modules: {
+            magento: { unofficial: true },
+            woocommerce: { unofficial: true  },
+            prestashop: { unofficial: true },
+            opencart: { unofficial: true },
+            shopify: {},
+        },
         fees: {
             trn() {
                 return $revenue.scale(1.9 / 100).add(new Currency(2.25 * $qty, 'DKK'));
@@ -151,6 +165,10 @@ const PSPs = [
         link: 'https://certitrade.se',
         cards: ['visa', 'mastercard', 'maestro'],
         features: ['Svindelkontrol', 'Abonnementsbetaling'],
+        modules: {
+            prestashop: { unofficial: true },
+            opencart: { unofficial: true }
+        },
         fees: {
             trn() {
                 return $revenue.scale(2.1 / 100).add(new Currency(2.1 * $qty, 'SEK'));
@@ -164,6 +182,10 @@ const PSPs = [
         acqs: ['Bambora', 'Clearhaus', 'Swedbank', 'Handelsbanken', 'Elavon'],
         cards: ['visa', 'mastercard', 'maestro', 'amex', 'jcb', 'diners'],
         features: ['Svindelkontrol', 'Abonnementsbetaling'],
+        modules: {
+            prestashop: { unofficial: true },
+            opencart: { unofficial: true }
+        },
         fees: {
             monthly: new Currency(1000, 'SEK'),
             trn() {
@@ -180,6 +202,9 @@ const PSPs = [
         cards: ['dankort', 'visa', 'mastercard', 'maestro', 'amex', 'jcb',
             'diners', Mobilepay, Forbrugsforeningen],
         features: ['Abonnementsbetaling'],
+        modules: {
+            dandomain: {}
+        },
         fees: {
             setup: new Currency(199, 'DKK'),
             monthly: new Currency(149, 'DKK')
@@ -197,6 +222,16 @@ const PSPs = [
                 monthly: new Currency(49, 'DKK')
             }
         ],
+        modules: {
+            magento: { git: 'github.com/DIBS-Payment-Services/Magento2_dibseasy' },
+            woocommerce: { unofficial: true },
+            prestashop: { git: 'github.com/DIBS-Payment-Services/Prestashop1.7_dibseasy' },
+            opencart: { git: 'github.com/DIBS-Payment-Services/opencart30_dibseasy' },
+            shopify: {},
+            dandomain: {},
+            wannafind: {},
+            scannet: {}
+        },
         fees: {
             monthly: new Currency(299, 'DKK'),
             trn() {
@@ -218,6 +253,16 @@ const PSPs = [
                 monthly: new Currency(49, 'DKK')
             }
         ],
+        modules: {
+            magento: { git: 'github.com/DIBS-Payment-Services/magento2-dibs-flexwin' },
+            woocommerce: { unofficial: true },
+            prestashop: { git: 'github.com/DIBS-Payment-Services/magento2-dibs-flexwin' },
+            opencart: { git: 'github.com/DIBS-Payment-Services/Opencart' },
+            shopify: {},
+            dandomain: {},
+            wannafind: {},
+            scannet: {}
+        },
         fees: {
             setup: new Currency(599, 'DKK'),
             monthly: new Currency(199, 'DKK'),
@@ -316,7 +361,7 @@ const PSPs = [
         logo: 'netaxept.svg',
         link: 'https://shop.nets.eu/da/web/dk/e-commerce',
         acqs: ['Nets', 'Teller'],
-        cards: ['dankort', 'visa', 'mastercard', 'maestro'],
+        cards: ['dankort', 'visa', 'mastercard', 'maestro', 'mobilepay'],
         features: [],
         fees: {
             setup: new Currency(1005, 'DKK'),
@@ -331,7 +376,7 @@ const PSPs = [
         logo: 'netaxept.svg',
         link: 'https://shop.nets.eu/da/web/dk/e-commerce',
         acqs: ['Nets', 'Teller', 'Swedbank', 'Elavon'],
-        cards: ['dankort', 'visa', 'mastercard', 'maestro', 'amex', 'jcb', 'diners'],
+        cards: ['dankort', 'visa', 'mastercard', 'maestro', 'amex', 'jcb', 'diners', 'mobilepay'],
         features: [
             {
                 title: 'Svindelkontrol',
@@ -447,6 +492,13 @@ const PSPs = [
                 }
             }
         ],
+        modules: {
+            magento: { unofficial: true, git: 'github.com/RBech/QuickPay_Magento2' },
+            woocommerce: { unofficial: true },
+            prestashop: { unofficial: true },
+            opencart: { unofficial: true },
+            shopify: {}
+        },
         fees: {
             trn() {
                 return $revenue.scale(1.45 / 100).add(new Currency(4 * $qty, 'DKK'));
@@ -467,6 +519,13 @@ const PSPs = [
                 }
             }
         ],
+        modules: {
+            magento: { unofficial: true, git: 'github.com/RBech/QuickPay_Magento2' },
+            woocommerce: { unofficial: true },
+            prestashop: { unofficial: true },
+            opencart: { unofficial: true },
+            shopify: {}
+        },
         fees: {
             monthly: new Currency(59, 'DKK'),
             trn() {
@@ -488,6 +547,13 @@ const PSPs = [
                 }
             }
         ],
+        modules: {
+            magento: { unofficial: true, git: 'github.com/RBech/QuickPay_Magento2' },
+            woocommerce: { unofficial: true },
+            prestashop: { unofficial: true },
+            opencart: { unofficial: true },
+            shopify: {}
+        },
         fees: {
             monthly: new Currency(99, 'DKK'),
             trn() {
@@ -513,6 +579,13 @@ const PSPs = [
                 }
             }
         ],
+        modules: {
+            magento: { unofficial: true, git: 'github.com/RBech/QuickPay_Magento2' },
+            woocommerce: { unofficial: true },
+            prestashop: { unofficial: true },
+            opencart: { unofficial: true },
+            shopify: {}
+        },
         fees: {
             monthly: new Currency(149, 'DKK'),
             trn() {
@@ -538,6 +611,13 @@ const PSPs = [
                 }
             }
         ],
+        modules: {
+            magento: { unofficial: true, git: 'github.com/RBech/QuickPay_Magento2' },
+            woocommerce: { unofficial: true },
+            prestashop: { unofficial: true },
+            opencart: { unofficial: true },
+            shopify: {}
+        },
         fees: {
             monthly: new Currency(129, 'DKK'),
             trn() {
@@ -557,6 +637,16 @@ const PSPs = [
         cards: ['dankort', 'visa', 'mastercard', 'maestro', 'amex',
             'jcb', 'diners', Mobilepay, Forbrugsforeningen],
         features: ['Svindelkontrol', 'Abonnementsbetaling'],
+        modules: {
+            magento: { unofficial: true, git: 'github.com/RBech/QuickPay_Magento2' },
+            woocommerce: { unofficial: true },
+            prestashop: { unofficial: true },
+            opencart: { unofficial: true },
+            shopify: {},
+            dandomain: {},
+            wannafind: {},
+            scannet: {}
+        },
         fees: {
             trn() {
                 return new Currency(5 * $qty, 'DKK');
@@ -571,6 +661,16 @@ const PSPs = [
         cards: ['dankort', 'visa', 'mastercard', 'maestro', 'amex',
             'jcb', 'diners', Mobilepay, Forbrugsforeningen],
         features: ['Svindelkontrol', 'Abonnementsbetaling'],
+        modules: {
+            magento: { unofficial: true, git: 'github.com/RBech/QuickPay_Magento2' },
+            woocommerce: { unofficial: true },
+            prestashop: { unofficial: true },
+            opencart: { unofficial: true },
+            shopify: {},
+            dandomain: {},
+            wannafind: {},
+            scannet: {}
+        },
         fees: {
             monthly: new Currency(49, 'DKK'),
             trn() {
@@ -586,6 +686,16 @@ const PSPs = [
         cards: ['dankort', 'visa', 'mastercard', 'maestro', 'amex',
             'jcb', 'diners', Mobilepay, Forbrugsforeningen],
         features: ['Svindelkontrol', 'Abonnementsbetaling'],
+        modules: {
+            magento: { unofficial: true, git: 'github.com/RBech/QuickPay_Magento2' },
+            woocommerce: { unofficial: true },
+            prestashop: { unofficial: true },
+            opencart: { unofficial: true },
+            shopify: {},
+            dandomain: {},
+            wannafind: {},
+            scannet: {}
+        },
         fees: {
             monthly: new Currency(149, 'DKK'),
             trn() {
@@ -650,6 +760,9 @@ const PSPs = [
                 monthly: new Currency(99, 'DKK')
             }
         ],
+        modules: {
+            scannet: {}
+        },
         fees: {
             monthly: new Currency(399, 'DKK')
         }
@@ -662,6 +775,13 @@ const PSPs = [
         cards: ['dankort', 'visa', 'mastercard', 'maestro', 'amex', 'jcb',
             'diners', Mobilepay, Forbrugsforeningen],
         features: ['Svindelkontrol'],
+        modules: {
+            magento: { git: 'github.com/scanpaydk/magento2-scanpay' },
+            woocommerce: { git: 'github.com/scanpaydk/woocommerce-scanpay' },
+            prestashop: { git: 'github.com/scanpaydk/prestashop-scanpay' },
+            thirtybees: { git: 'github.com/scanpaydk/prestashop-1.6-scanpay' },
+            opencart: { git: 'github.com/scanpaydk/opencart-scanpay' },
+        },
         fees: {
             trn() {
                 return new Currency(0.25 * $qty, 'DKK');
@@ -674,6 +794,14 @@ const PSPs = [
         link: 'https://stripe.com',
         cards: ['visa', 'mastercard', 'amex'],
         features: ['Svindelkontrol', 'Abonnementsbetaling'],
+        modules: {
+            magento: { unofficial: true },
+            woocommerce: { unofficial: true },
+            prestashop: { unofficial: true },
+            thirtybees: { unofficial: true },
+            opencart: { unofficial: true },
+            shopify: { unofficial: true }
+        },
         fees: {
             trn() {
                 return $revenue.scale(1.4 / 100).add(new Currency(1.8 * $qty, 'DKK'));
@@ -694,6 +822,9 @@ const PSPs = [
             },
             'Svindelkontrol'
         ],
+        modules: {
+            wannafind: {}
+        },
         fees: {
             monthly(o) {
                 // Hacky solution to add 3-D Secure (mandatory)
@@ -708,6 +839,13 @@ const PSPs = [
         link: 'https://www.yourpay.io',
         cards: ['visa', 'mastercard', 'maestro'],
         features: ['Svindelkontrol'],
+        modules: {
+            woocommerce: {},
+            dandomain: {},
+            magento: {},
+            prestashop: {},
+            opencart: {}
+        },
         fees: {
             trn() {
                 if ($revenue.order('DKK') > 100000) {
